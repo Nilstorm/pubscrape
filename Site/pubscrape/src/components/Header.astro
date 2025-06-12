@@ -1,0 +1,92 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<h2><a href="/">PubScrape</a></h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<div class="blog"><HeaderLink href="/blog" >Papers</HeaderLink>
+				<div class="blog-dropdown">
+					<a href="/blog/Mathematics">Mathematics</a>
+					<a href="/blog/Mathematics">Physics</a>
+				</div>
+			</div>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="">Writing With AI(Tips and Tricks)</HeaderLink>
+		</div>
+	</nav>
+</header>
+<style>
+
+	.blog{
+  	position: relative;
+  	display: inline-block;
+	}	
+	.blog:hover .blog-dropdown{
+		display:block;
+	}
+
+	a.blog-main:hover {
+		text-decoration:underline;
+		text-decoration-color:blue;
+
+	}
+	.blog-dropdown a:hover{
+		text-decoration: underline;
+		text-decoration-color: blue;
+	}
+
+	.blog-dropdown{
+  		display: none;
+  		position: absolute;
+  		background-color: #f1f1f1;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
+		background-color:rgb(155,0,0);
+	}
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: rgb(155, 0, 0);
+		color: navajowhite;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+		color:navajowhite;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>

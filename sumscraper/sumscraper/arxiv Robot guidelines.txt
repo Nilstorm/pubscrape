@@ -1,0 +1,4 @@
+General Notes for arxiv Scraping
+
+4 requests per seccond, 1 seccond sleep per burst
+
